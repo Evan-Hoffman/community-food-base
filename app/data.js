@@ -1,4 +1,4 @@
-const books = [
+const foods = [
 {
     id: "1",
     title: "Eggs x 12",
@@ -22,8 +22,14 @@ const books = [
     title: "Tomato",
     picture: require("./assets/images/books/tomato.png"),
     cost: 1
+},
+{
+    id: "4",
+    title: "potato",
+    picture: require("./assets/images/books/potato.png"),
+    cost: 1
 }
 ];export const getProducts = () => {
-    return books;
+    return foods;
     
 }
