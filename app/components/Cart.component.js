@@ -58,7 +58,7 @@ export class Cart extends Component {
         alignItems: 'center'
     },
     cart:{
-        color: 'white',
+        color: '#eee',
         fontSize: 14
     }
 })
