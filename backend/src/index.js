@@ -5,7 +5,8 @@ const session = require('express-session')
 const passport = require('passport')
 require('dotenv').config()
 const setupPassport = require('./user/passport')
-const setupUserRoutes = require('./user');
+const setupUserRoutes = require('./user')
+const setupPurchaseRoutes = require('./purchase');
 
 (async () => {
   connection = await mysql.createConnection({
@@ -29,6 +30,7 @@ const setupUserRoutes = require('./user');
   app.use(passport.session())
 
   setupUserRoutes(app, passport)
+  setupPurchaseRoutes(app)
 
   app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`)
