@@ -33,7 +33,7 @@ async function setupPurchaseRoutes(app) {
 
   app.put('/purchase/:customer_id', async (req, res) => {
     await connection.query(
-      'UPDATE `users` SET `confirmed_order` = 1 WHERE `id` = ?',
+      'UPDATE `users` SET `confirmed_purchase` = 1 WHERE `id` = ?',
       [req.params.customer_id]
     )
     res.send('Confirmed purchase')
