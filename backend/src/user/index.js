@@ -15,6 +15,8 @@ function setupRoutes(app, passport) {
       successRedirect: '/',
       failureRedirect: '/login'
     })(req, res, next)
+    res.setHeader('Content-Type', 'application/json')
+    req.send(id)
   })
 
   app.post('/login', passport.authenticate('login', {
