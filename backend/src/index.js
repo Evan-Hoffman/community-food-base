@@ -7,6 +7,7 @@ require('dotenv').config()
 const setupPassport = require('./user/passport')
 const setupUserRoutes = require('./user')
 const setupPurchaseRoutes = require('./purchase');
+const setupDeliveriesRoutes = require('./deliveries');
 
 (async () => {
   connection = await mysql.createConnection({
@@ -31,6 +32,7 @@ const setupPurchaseRoutes = require('./purchase');
 
   setupUserRoutes(app, passport)
   setupPurchaseRoutes(app)
+  setupDeliveriesRoutes(app)
 
   app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`)

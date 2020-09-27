@@ -27,10 +27,14 @@ All requests should be sent to http://localhost:3000
 - POST `/user/logout`
 - POST `/user/:id` -> user
 
-### Orders
+### Purchases
 
 - POST `/purchase/:customer_id` (item_ids: int[])
 - GET `/purchase/:customer_id` -> item_ids: int[]
 - DELETE `/purchase/:customer_id`
 - PUT `/purchase/:customer_id`
     - Confirms the customer's cart
+
+### Deliveries
+
+- GET `/deliveries` -> user_ids: int[]
