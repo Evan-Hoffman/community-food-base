@@ -1,5 +1,5 @@
 const LocalStrategy = require('passport-local').Strategy
-const util = require('./util')
+const util = require('../util')
 
 module.exports = passport => {
   passport.serializeUser((user, done) => {
