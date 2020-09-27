@@ -5,7 +5,8 @@ import {
     StyleSheet,
     TouchableOpacity,
     Alert 
-} from 'react-native';import { connect } from 'react-redux';
+} from 'react-native';
+import { connect } from 'react-redux';
 import Swipeout from 'react-native-swipeout';
 import { removeItem } from '../redux/actions/cartActions';
 class CartItems extends Component {    state = {

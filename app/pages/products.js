@@ -6,10 +6,10 @@ import {
 } 
 from 'react-native';
 import { connect } from 'react-redux';
-import  Product  from '../components/Product.component';
+import  Product  from '../components/product.component';
 import { addToCart } from '../redux/actions/cartActions';
 import { fetchProducts } from '../redux/actions/productAction';
-import Logo from '../components/Logo.component';
+import Logo from '../components/logo.component';
 
 import Cart from '../components/Cart.component';
 class Products extends Component {

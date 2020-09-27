@@ -4,7 +4,8 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity 
-} from 'react-native';class OrderSummary extends Component {    render() {
+} from 'react-native';
+class OrderSummary extends Component {    render() {
         const { item } = this.props;
             return (
         <View style={styles.container}>

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';import {
+import React, { Component } from 'react';
+import {
     StyleSheet,
     View,
     Text,
@@ -7,8 +8,10 @@ import React, { Component } from 'react';import {
     FlatList,
     Alert
   } from 'react-native';
-  import { connect } from 'react-redux';import { addOrder } from '../redux/actions/orderAction';
-  import { emptyCart } from '../redux/actions/cartActions';class CustomerForm extends Component {
+  import { connect } from 'react-redux';
+  import { addOrder } from '../redux/actions/orderAction';
+  import { emptyCart } from '../redux/actions/cartActions';
+  class CustomerForm extends Component {
    state = {
       name:'',
       phone: '',

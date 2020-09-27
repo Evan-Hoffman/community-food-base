@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import Products from '../pages/Products';
-import Checkout from '../pages/Checkout';
-import Receipt from '../pages/Receipt';
+import Products from '../pages/products';
+import Checkout from '../pages/checkout';
+import Receipt from '../pages/receipt';
 import themes from '../styles/theme.style';
 const Route = createStackNavigator(
 {

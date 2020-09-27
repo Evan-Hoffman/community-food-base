@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CheckoutItems from '../components/CheckoutItems.component';
-import Logo from '../components/Logo.component';
+import Logo from '../components/logo.component';
 import Cart from '../components/Cart.component';
 
 export class Checkout extends Component { static navigationOptions = ({navigation}) => {

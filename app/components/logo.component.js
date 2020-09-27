@@ -1,4 +1,5 @@
-import React, { Component } from 'react';import {
+import React, { Component } from 'react';
+import {
     Image,
     TouchableOpacity
 } from 'react-native';

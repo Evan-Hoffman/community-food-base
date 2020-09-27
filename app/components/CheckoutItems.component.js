@@ -1,11 +1,14 @@
-import React, { Component } from 'react';import {
+import React, { Component } from 'react';
+import {
     View,
     Text,
     FlatList,
   StyleSheet,
   ScrollView
-} from 'react-native';import CartItems  from './CartItems.component';
-import CustomerForm from './CustomerForm.component';class CheckoutItems extends Component {  
+} from 'react-native';
+import CartItems  from './cartItems.component';
+import CustomerForm from './CustomerForm.component';
+class CheckoutItems extends Component {  
   render() {
     const { cartItems, navigation, cartTotal } = this.props;
     return (

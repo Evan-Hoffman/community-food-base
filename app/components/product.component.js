@@ -5,7 +5,8 @@ import {
     Image,
     StyleSheet,
     TouchableOpacity 
-} from 'react-native';import themes from '../styles/theme.style';class Product extends Component {
+} from 'react-native';
+import themes from '../styles/theme.style';class Product extends Component {
     addToCart = () => {
         this.props.addItemsToCart(this.props.item)
     }

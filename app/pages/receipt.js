@@ -8,7 +8,7 @@ import {
   } from 'react-native';
   import { connect } from 'react-redux';
   import OrderSummary from '../components/OrderSummary.component';
-  import Logo from '../components/Logo.component';
+  import Logo from '../components/logo.component';
   import Cart from '../components/Cart.component';
   import themes from '../styles/theme.style';
   
