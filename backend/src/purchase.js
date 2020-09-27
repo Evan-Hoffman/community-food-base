@@ -1,14 +1,11 @@
 async function setupPurchaseRoutes(app) {
-  app.post('/purchase/:customer_id', async (req, res) => {
-    req.body.item_ids.forEach(async item_id => {
-      const result = await connection.query(
-        'INSERT INTO `orders` (`customer_id`, `item_id`, `confirmed`) VALUES (?, ?, 0)',
-        [req.params.customer_id, item_id]
-      )
-      const id = result.insertId
-      console.log(`Customer ${req.params.customer_id} purchased ${item_id}`)
-    })
-    res.send(`Created ${req.body.item_ids.length} orders`)
+  app.post('/purchase/:customer_id/:item_id', async (req, res) => {
+    const result = await connection.query(
+      'INSERT INTO `orders` (`customer_id`, `item_id`) VALUES (?, ?)',
+      [req.params.customer_id, req.params.item_id]
+    )
+    console.log(`Customer ${req.params.customer_id} purchased ${req.params.item_id}`)
+    res.send(`Created order successfully`)
   })
 
   app.get('/purchase/:customer_id', async (req, res) => {

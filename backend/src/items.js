@@ -1,5 +1,3 @@
-const setupPurchaseRoutes = require("./purchase")
-
 function setupItemsRoutes(app) {
   app.get('/items/:category_id', async (req, res) => {
     const rows = await connection.query(
