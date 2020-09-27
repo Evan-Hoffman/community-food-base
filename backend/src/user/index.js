@@ -29,6 +29,23 @@ function setupRoutes(app, passport) {
     console.log('Logged user out')
     res.redirect('/')
   })
+
+  app.get('/user/:id', async (req, res) => {
+    const result = await connection.query(
+      'SELECT * FROM `users` WHERE `id` = ?',
+      [req.params.id]
+    )
+    if (result.length === 0) {
+      res.statusCode(400).send('No such user')
+      return
+    }
+    const user = result[0]
+    delete user.password
+    delete user.salt
+    user.is_deliverer = user.is_deliverer.data[0] == 1
+    res.setHeader('Content-Type', 'application/json')
+    res.send(result[0])
+  })
 }
 
 module.exports = setupRoutes

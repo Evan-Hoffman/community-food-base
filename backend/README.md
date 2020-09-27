@@ -25,6 +25,7 @@ All requests should be sent to http://localhost:3000
 - POST `/user/register` -> id: int (first_name: string, last_name: string, email: string, phone: string, password: string, location: string, is_deliverer: boolean)
 - POST `/user/login` (email: string, password: string)
 - POST `/user/logout`
+- POST `/user/:id` -> user
 
 ### Orders
 
