@@ -38,7 +38,6 @@ import {
               <Text style={styles.billtext}>Billing details</Text>
               <Text style={styles.text}>{customer.name}</Text>
               <Text style={styles.text}>{customer.phone}</Text>
-              <Text style={styles.text}>{customer.email}</Text>
               <Text style={styles.text}>{customer.street}</Text>
           </View>
           <View style={styles.orderSumm}>
