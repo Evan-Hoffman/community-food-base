@@ -16,7 +16,14 @@ import {
       return {
         headerTitle: 'Receipt',
         headerLeft: <Logo navigation={navigation}/>,
-        headerRight: <Cart navigation={navigation}/>
+        headerRight: <Cart navigation={navigation}/>,
+        headerRight: <Cart navigation={navigation}/>,
+        headerStyle: {
+          backgroundColor: '#34343'
+        },
+        headerTitleStyle: {
+          color: '#eee'
+        }
       }
     }
     getTotal(){

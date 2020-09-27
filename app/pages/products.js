@@ -17,7 +17,13 @@ class Products extends Component {
     return {
       headerTitle: 'Products',
       headerLeft: <Logo navigation={navigation}/>,
-      headerRight: <Cart navigation={navigation}/>
+      headerRight: <Cart navigation={navigation}/>,
+      headerStyle: {
+        backgroundColor: '#343438'
+      },
+      headerTitleStyle: {
+        color: '#eee'
+      }
     }
   }
   constructor(props) {

@@ -8,7 +8,14 @@ export class Checkout extends Component { static navigationOptions = ({navigatio
     return {
       headerTitle: 'Checkout',
       headerLeft: <Logo navigation={navigation}/>,
-      headerRight: <Cart navigation={navigation}/>
+      headerRight: <Cart navigation={navigation}/>,
+      headerRight: <Cart navigation={navigation}/>,
+      headerStyle: {
+        backgroundColor: '#343438'
+      },
+      headerTitleStyle: {
+        color: '#eee'
+      }
     }
   }
     render() {
