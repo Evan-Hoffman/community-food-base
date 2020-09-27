@@ -6,8 +6,10 @@ const passport = require('passport')
 require('dotenv').config()
 const setupPassport = require('./user/passport')
 const setupUserRoutes = require('./user')
-const setupPurchaseRoutes = require('./purchase');
-const setupDeliveriesRoutes = require('./deliveries');
+const setupPurchaseRoutes = require('./purchase')
+const setupDeliveriesRoutes = require('./deliveries')
+const setupCategoriesRoutes = require('./categories');
+const setupItemsRoutes = require('./items');
 
 (async () => {
   connection = await mysql.createConnection({
@@ -33,6 +35,8 @@ const setupDeliveriesRoutes = require('./deliveries');
   setupUserRoutes(app, passport)
   setupPurchaseRoutes(app)
   setupDeliveriesRoutes(app)
+  setupCategoriesRoutes(app)
+  setupItemsRoutes(app)
 
   app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`)

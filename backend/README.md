@@ -20,6 +20,11 @@ To run the server, type `npm start`.
 
 All requests should be sent to http://localhost:3000
 
+### Items
+
+- GET `/categories` -> ids: int[]
+- GET `/items/:category_id` -> item[], each item contains { name: string, price: decimal }
+
 ### Users
 
 - POST `/user/register` -> id: int (first_name: string, last_name: string, email: string, phone: string, password: string, location: string, is_deliverer: boolean)
