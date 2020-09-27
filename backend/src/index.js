@@ -1,49 +1,61 @@
 const express = require('express')
+const mysql = require('promise-mysql')
 const session = require('express-session')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
+require('dotenv').config();
 
-passport.serializeUser((user, done) => {
-  done(null, user.id)
-})
+(async () => {
+  connection = await mysql.createConnection({
+    host: process.env.host,
+    user: process.env.user,
+    password: process.env.password,
+    database: process.env.database
+  })
+  console.log(`Connected to database '${process.env.database}'`)
 
-passport.deserializeUser((id, done) => {
-  done(null, /*TODO: get user by id*/{ id: 0 })
-})
+  passport.serializeUser((user, done) => {
+    done(null, user.id)
+  })
 
-passport.use('register', new LocalStrategy(
-  (username, password, done) => {
-    console.log(`Created user @${username} with password ${password}`)
-    done(null, { id: 0 })
-  }
-))
+  passport.deserializeUser((id, done) => {
+    done(null, /*TODO: get user by id*/{ id: 0 })
+  })
 
-passport.use('login', new LocalStrategy(
-  (username, password, done) => {
-    console.log(`Logged in as user @${username} with password ${password}`)
-    done(null, { id: 0 })
-  }
-))
+  passport.use('register', new LocalStrategy(
+    (username, password, done) => {
+      console.log(`Created user @${username} with password ${password}`)
+      done(null, { id: 0 })
+    }
+  ))
 
-const PORT = 3000
-const app = express()
+  passport.use('login', new LocalStrategy(
+    (username, password, done) => {
+      console.log(`Logged in as user @${username} with password ${password}`)
+      done(null, { id: 0 })
+    }
+  ))
 
-app.use(session({
-  resave: false, saveUninitialized: true, secret: 'hhehh'
-}))
-app.use(passport.initialize())
-app.use(passport.session())
+  const PORT = 3000
+  const app = express()
 
-app.post('/register', passport.authenticate('register', {
-  successRedirect: '/',
-  failureRedirect: '/register'
-}))
+  app.use(session({
+    resave: false, saveUninitialized: true, secret: 'hhehh'
+  }))
+  app.use(passport.initialize())
+  app.use(passport.session())
 
-app.post('/login', passport.authenticate('login', {
-  successRedirect: '/',
-  failureRedirect: '/login'
-}))
+  app.post('/register', passport.authenticate('register', {
+    successRedirect: '/',
+    failureRedirect: '/register'
+  }))
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`)
-})
+  app.post('/login', passport.authenticate('login', {
+    successRedirect: '/',
+    failureRedirect: '/login'
+  }))
+
+  app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`)
+  })
+})()
