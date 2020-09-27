@@ -42,7 +42,7 @@ function setupRoutes(app, passport) {
     const user = result[0]
     delete user.password
     delete user.salt
-    user.is_deliverer = user.is_deliverer.data[0] == 1
+    user.is_deliverer = user.is_deliverer[0] === 1
     res.setHeader('Content-Type', 'application/json')
     res.send(result[0])
   })
