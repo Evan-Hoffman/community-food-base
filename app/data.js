@@ -24,7 +24,7 @@ const foods = [
     cost: 1
 },
 {
-    id: "4",
+    id: "5",
     title: "potato",
     picture: require("./assets/images/books/potato.png"),
     cost: 1
