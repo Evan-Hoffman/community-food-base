@@ -25,3 +25,9 @@ All requests should be sent to http://localhost:3000
 - POST `/register` (first_name: string, last_name: string, email: string, phone: string, password: string, location: string, is_deliverer: boolean)
 - POST `/login` (email: string, password: string)
 - POST `/logout`
+
+### Orders
+
+- POST `/purchase/:customer_id` (item_ids: int[])
+- GET `/purchase/:customer_id` -> int[]
+- DELETE `/purchase/:customer_id`
