@@ -2,7 +2,7 @@ async function setupPurchaseRoutes(app) {
   app.post('/purchase/:customer_id', async (req, res) => {
     req.body.item_ids.forEach(async item_id => {
       const result = await connection.query(
-        'INSERT INTO `orders` (`customer_id`, `item_id`) VALUES (?, ?)',
+        'INSERT INTO `orders` (`customer_id`, `item_id`, `confirmed`) VALUES (?, ?, 0)',
         [req.params.customer_id, item_id]
       )
       const id = result.insertId
@@ -29,6 +29,14 @@ async function setupPurchaseRoutes(app) {
     }
     // success
     res.send(`Deleted ${result.affectedRows} orders`)
+  })
+
+  app.put('/purchase/:customer_id', async (req, res) => {
+    await connection.query(
+      'UPDATE `orders` SET `confirmed` = 1 WHERE customer_id = ?',
+      [req.params.customer_id]
+    )
+    res.send('Confirmed orders')
   })
 }
 
