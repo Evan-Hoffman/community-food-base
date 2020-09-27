@@ -2,7 +2,7 @@ const crypto = require('crypto')
 const util = require('../util');
 
 function setupRoutes(app, passport) {
-  app.post('/register', async (req, res, next) => {
+  app.post('/user/register', async (req, res, next) => {
     const salt = crypto.randomBytes(64).toString('hex')
     const password = util.hash(req.body.password, salt)
     const result = await connection.query(
@@ -19,12 +19,12 @@ function setupRoutes(app, passport) {
     req.send(id)
   })
 
-  app.post('/login', passport.authenticate('login', {
+  app.post('/user/login', passport.authenticate('login', {
     successRedirect: '/',
     failureRedirect: '/login'
   }))
 
-  app.post('/logout', (req, res) => {
+  app.post('/user/logout', (req, res) => {
     req.logout()
     console.log('Logged user out')
     res.redirect('/')
