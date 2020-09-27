@@ -1,11 +1,7 @@
 const books = [
 {
     id: "1",
-    title: "Beginning Android Programming",
-    author: "J.F DiMarzio",
-    authorbio: "About DiMarzio",
-    publicationdate: "2017 by John Wiley & Sons",
-    introduction: "This book is written to help start beginning Android developers ",
+    title: "Eggs x 12",
     picture: require("./assets/images/books/android.png"),
     cost: 25
 },
